@@ -1,0 +1,35 @@
+<p>Tabla</p>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-primary table-striped">
+            <thead>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Cuatrimestre</th>
+                <th>Prmedio</th>
+                <th colspan="2">Operaciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumno of alumnosService.students">
+                    <td>{{alumno.matricula}}</td>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellidos}}</td>
+                    <td>{{alumno.cuatrimestre}}</td>
+                    <td>{{alumno.promedio}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="getStudent(alumno)">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteStudent(alumno.matricula)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
