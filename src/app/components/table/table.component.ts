@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AlumnosService } from 'src/app/services/alumnos.service';
-import { Alumno } from 'src/app/models/Alumno';
+import { ProductosService } from 'src/app/services/productos.service';
+import { Producto } from 'src/app/models/Producto';
 
 @Component({
   selector: 'app-table',
@@ -9,31 +9,31 @@ import { Alumno } from 'src/app/models/Alumno';
 })
 export class TableComponent  {
  
-  constructor(public alumnosService:AlumnosService){}
+  constructor(public productosService:ProductosService){}
 
   ngOnInit(){
-    this.getAllStudents();
+    this.getAllProducts();
   }
   
-  getAllStudents(){
-    this.alumnosService.getAllStudents().subscribe(
+  getAllProducts(){
+    this.productosService.getAllProducts().subscribe(
       res => {
-        this.alumnosService.students = res;
+        this.productosService.products = res;
         console.log(res);
       }, err => console.error(err)
     )
   }
 
-  deleteStudent(matricula:String){
-    this.alumnosService.deleteStudent(matricula).subscribe(
-      res => this.getAllStudents(),
+  deleteProduct(codigo:Number){
+    this.productosService.deleteProduct(codigo).subscribe(
+      res => this.getAllProducts(),
       err => console.error(err)
     )
   }
   
-  getStudent(alumno:Alumno){
-    this.alumnosService.selectedStudent = alumno;
-    this.alumnosService.update=true;
+  getProduct(producto:Producto){
+    this.productosService.selectedProduct = producto;
+    this.productosService.update=true;
   }
 
 

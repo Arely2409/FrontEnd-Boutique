@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AlumnosService } from 'src/app/services/alumnos.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-form',
@@ -9,15 +9,15 @@ import { AlumnosService } from 'src/app/services/alumnos.service';
 })
 export class FormComponent {
 
-  constructor( public studentsService:AlumnosService){}
+  constructor( public productsService:ProductosService){}
 
-  addStudent(form:NgForm){
-    this.studentsService.addStudents(form.value).subscribe(
+  addProduct(form:NgForm){
+    this.productsService.addProducts(form.value).subscribe(
       res => {
         form.reset();
-        this.studentsService.getAllStudents().subscribe(
+        this.productsService.getAllProducts().subscribe(
           res => {
-            this.studentsService.students = res;
+            this.productsService.products = res;
             console.log(res);
           }, err => console.error(err)
         )
@@ -26,14 +26,14 @@ export class FormComponent {
     )
   }
 
-  updateStudent(form:NgForm){
-    this.studentsService.updateStudent(form.value).subscribe(
+  updateProduct(form:NgForm){
+    this.productsService.updateProduct(form.value).subscribe(
       res => {
-        this.studentsService.update=false;
+        this.productsService.update=false;
         form.reset();
-        this.studentsService.getAllStudents().subscribe(
+        this.productsService.getAllProducts().subscribe(
           res => {
-            this.studentsService.students = res;
+            this.productsService.products = res;
             console.log(res);
           }, err => console.error(err)
         )

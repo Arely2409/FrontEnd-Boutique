@@ -1,37 +1,47 @@
 <p>Formulario</p>
 <div class="card">
     <div class="card-body">
-        <form #studentsForm="ngForm">
+        <form #productsForm="ngForm">
             <div class="row">
                 <div class="col-lg-6">
-                    <label for="txtMatricula" class="form-label">Matrícula</label>
-                    <input type="text" id="txtMatricula" name="matricula" class="form-control" [(ngModel)]="studentsService.selectedStudent.matricula">
+                    <label for="txtCodigo" class="form-label">Código</label>
+                    <input type="text" id="txtCodigo" name="codigo" class="form-control" [(ngModel)]="productsService.selectedProduct.codigo">
                 </div>
                 <div class="col-lg-6">
-                    <label for="txtNombre" class="form-label">Nombre</label>
-                    <input type="text" id="txtNombre" name="nombre" class="form-control" [(ngModel)]="studentsService.selectedStudent.nombre">
+                    <label for="txtTipo_prenda" class="form-label">Tipo de Prenda</label>
+                    <input type="text" id="txtTipo_prenda" name="tipo_prenda" class="form-control" [(ngModel)]="productsService.selectedProduct.tipo_prenda">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <label for="txtApellidos" class="form-label">Apellidos</label>
-                    <input type="text" id="txtApellidos" name="apellidos" class="form-control" [(ngModel)]="studentsService.selectedStudent.apellidos">
+                    <label for="txtTalla" class="form-label">Talla</label>
+                    <input type="text" id="txtTalla" name="tallas" class="form-control" [(ngModel)]="productsService.selectedProduct.talla">
                 </div>
             </div>
             <div class="row mb-3" >
                 <div class="col-lg-6">
-                    <label for="txtCuatrimestre" class="form-label">Cuatrimestre</label>
-                    <input type="text" id="txtCuatrimestre" name="cuatrimestre" class="form-control" [(ngModel)]="studentsService.selectedStudent.cuatrimestre">
+                    <label for="txtMarca" class="form-label">Marca</label>
+                    <input type="text" id="txtMarca" name="marca" class="form-control" [(ngModel)]="productsService.selectedProduct.marca">
                 </div>
                 <div class="col-lg-6">
-                    <label for="txtPromedio" class="form-label">Promedio</label>
-                    <input type="text" id="txtPromedio" name="promedio" class="form-control" [(ngModel)]="studentsService.selectedStudent.promedio">
+                    <label for="txtColor" class="form-label">Color</label>
+                    <input type="text" id="txtColor" name="color" class="form-control" [(ngModel)]="productsService.selectedProduct.color">
+                </div>
+            </div>
+            <div class="row mb-3" >
+                <div class="col-lg-6">
+                    <label for="txtPrecio" class="form-label">Precio</label>
+                    <input type="text" id="txtPrecio" name="precio" class="form-control" [(ngModel)]="productsService.selectedProduct.precio">
+                </div>
+                <div class="col-lg-6">
+                    <label for="txtExistencias" class="form-label">Existencias</label>
+                    <input type="text" id="txtExistencias" name="existencias" class="form-control" [(ngModel)]="productsService.selectedProduct.existencias">
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <button *ngIf="studentsService.update==false" class="btn btn-primary" (click)="addStudent(studentsForm)">Guardar</button>
-                    <button *ngIf="studentsService.update==true" class="btn btn-warning" (click)="updateStudent(studentsForm)">Actualizar</button>
+                    <button *ngIf="productsService.update==false" class="btn btn-primary" (click)="addProduct(productsForm)">Guardar</button>
+                    <button *ngIf="productsService.update==true" class="btn btn-warning" (click)="updateProduct(productsForm)">Actualizar</button>
                 </div>
             </div>
         </form>
