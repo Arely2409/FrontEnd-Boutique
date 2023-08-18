@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <label for="txtCodigo" class="form-label">Código</label>
-                    <input type="text" id="txtCodigo" name="codigo" class="form-control" [(ngModel)]="productsService.selectedProduct.codigo">
+                    <input type="number" id="txtCodigo" name="codigo" class="form-control" [(ngModel)]="productsService.selectedProduct.codigo">
                 </div>
                 <div class="col-lg-6">
                     <label for="txtTipo_prenda" class="form-label">Tipo de Prenda</label>
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <label for="txtTalla" class="form-label">Talla</label>
-                    <input type="text" id="txtTalla" name="tallas" class="form-control" [(ngModel)]="productsService.selectedProduct.talla">
+                    <input type="number" id="txtTalla" name="talla" class="form-control" [(ngModel)]="productsService.selectedProduct.talla">
                 </div>
             </div>
             <div class="row mb-3" >
@@ -31,11 +31,11 @@
             <div class="row mb-3" >
                 <div class="col-lg-6">
                     <label for="txtPrecio" class="form-label">Precio</label>
-                    <input type="text" id="txtPrecio" name="precio" class="form-control" [(ngModel)]="productsService.selectedProduct.precio">
+                    <input type="number" id="txtPrecio" name="precio" class="form-control" [(ngModel)]="productsService.selectedProduct.precio">
                 </div>
                 <div class="col-lg-6">
                     <label for="txtExistencias" class="form-label">Existencias</label>
-                    <input type="text" id="txtExistencias" name="existencias" class="form-control" [(ngModel)]="productsService.selectedProduct.existencias">
+                    <input type="number" id="txtExistencias" name="existencias" class="form-control" [(ngModel)]="productsService.selectedProduct.existencias">
                 </div>
             </div>
             <div class="row">
